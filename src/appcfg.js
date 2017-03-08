@@ -1,40 +1,134 @@
-let app1Cfg = [
-  { id: 'module1', x: 10, y: 10, width: 400, height: 300, type: 'echartLine', indiId: 's001' },
-  { id: 'module2', x: 420, y: 10, width: 400, height: 300, type: 'echartBar', indiId: 's002' },
-  { id: 'module3', x: 830, y: 10, width: 400, height: 300, type: 'echartGuage', indiId: 's003' },
-  { id: 'module4', x: 10, y: 320, width: 400, height: 300, type: 'echartMap', indiId: 's004' },
-  { id: 'module5', x: 420, y: 320, width: 400, height: 300, type: 'echartGuage', indiId: 's005' },
-  { id: 'module6', x: 830, y: 320, width: 400, height: 300, type: 'echartPolar', indiId: 's006' },
-  { id: 'module7', x: 1240, y: 10, width: 400, height: 300, type: 'echartLine', indiId: 's007' },
-  { id: 'module8', x: 1650, y: 10, width: 400, height: 300, type: 'echartBar', indiId: 's008' },
-  { id: 'module9', x: 2060, y: 10, width: 400, height: 300, type: 'echartGuage', indiId: 's009' },
-  { id: 'module10', x: 1240, y: 320, width: 400, height: 300, type: 'echartMap', indiId: 's010' },
-  { id: 'module11', x: 1650, y: 320, width: 400, height: 300, type: 'echartGuage', indiId: 's011' },
-  { id: 'module12', x: 2060, y: 320, width: 400, height: 300, type: 'echartPolar', indiId: 's012' },
-  { id: 'module13', x: 2470, y: 10, width: 400, height: 300, type: 'echartLine', indiId: 's013' },
-  { id: 'module14', x: 2880, y: 10, width: 400, height: 300, type: 'echartBar', indiId: 's014' },
-  { id: 'module15', x: 3290, y: 10, width: 400, height: 300, type: 'echartGuage', indiId: 's015' },
-  { id: 'module16', x: 2470, y: 320, width: 400, height: 300, type: 'echartMap', indiId: 's016' },
-  { id: 'module17', x: 2880, y: 320, width: 400, height: 300, type: 'echartGuage', indiId: 's017' },
-  { id: 'module18', x: 3290, y: 320, width: 400, height: 300, type: 'echartPolar', indiId: 's018' },
-  { id: 'module19', x: 3700, y: 10, width: 400, height: 300, type: 'echartLine', indiId: 's019' },
-  { id: 'module20', x: 4110, y: 10, width: 400, height: 300, type: 'echartBar', indiId: 's020' },
-  { id: 'module21', x: 4520, y: 10, width: 400, height: 300, type: 'echartGuage', indiId: 's021' },
-  { id: 'module22', x: 3700, y: 320, width: 400, height: 300, type: 'echartMap', indiId: 's022' },
-  { id: 'module23', x: 4110, y: 320, width: 400, height: 300, type: 'echartGuage', indiId: 's023' },
-  { id: 'module24', x: 4520, y: 320, width: 400, height: 300, type: 'echartPolar', indiId: 's024' },
-  { id: 'module25', x: 10, y: 630, width: 400, height: 300, type: 'echartLine', indiId: 's025' },
-  { id: 'module26', x: 420, y: 630, width: 400, height: 300, type: 'echartBar', indiId: 's026' },
-  { id: 'module27', x: 830, y: 630, width: 400, height: 300, type: 'echartGuage', indiId: 's027' },
-  { id: 'module28', x: 1240, y: 630, width: 400, height: 300, type: 'echartLine', indiId: 's028' },
-  { id: 'module29', x: 1650, y: 630, width: 400, height: 300, type: 'echartBar', indiId: 's029' },
-  { id: 'module30', x: 2060, y: 630, width: 400, height: 300, type: 'echartGuage', indiId: 's030' },
-  { id: 'module31', x: 2470, y: 630, width: 400, height: 300, type: 'echartLine', indiId: 's031' },
-  { id: 'module32', x: 2880, y: 630, width: 400, height: 300, type: 'echartBar', indiId: 's032' },
-  { id: 'module33', x: 3290, y: 630, width: 400, height: 300, type: 'echartGuage', indiId: 's033' },
-  { id: 'module34', x: 3700, y: 630, width: 400, height: 300, type: 'echartLine', indiId: 's034' },
-  { id: 'module35', x: 4110, y: 630, width: 400, height: 300, type: 'echartBar', indiId: 's035' },
-  { id: 'module36', x: 4520, y: 630, width: 400, height: 300, type: 'echartGuage', indiId: 's036' }
-]
+/* eslint-disable */
+let app1Cfg = {
+  type: 'layout',
+  attr: { x: 10, y: 10, w: 1200, h: 600 },
+  children: [{
+    type: 'layout',
+    attr: { x: 0, y: 0, w: 620, h: 400, id: 'group1', class: 'data-group' },
+    children: [{
+      type: 'textBase',
+      attr: { x: 10, y: 10, w: 200, h: 40 },
+      text: '全省话务量',
+      config: {
+        textStyle: {
+          fontSize: 30
+        }
+      }
+    }, {
+      type: 'timeText',
+      attr: { x: 410, y: 20, w: 200, h: 30 },
+      config: {
+        textStyle: {
+          color: '#FF0'
+        }
+      }
+    }]
+  },
+  {
+    type: 'textBase',
+    attr: { x: 10, y: 290, w: 200, h: 50 },
+    text: '我是标题2',
+    config: {
+      textStyle: {
+        color: '#FF0',
+        fontWeight: 'bold',
+        textAlign: 'center'
+      }
+    },
+    effect: {
+      marquee: {
+        disable: false, // 开启走马灯
+        direction: 'left', // 走马灯方向
+        scrollamount: 10 // 滚动速度
+      }
+    }
+  },
+  {
+    type: 'counter',
+    attr: { x: 310, y: 290, w: 200, h: 50 },
+    config: {
+      prefix: {
+        content: '$',
+        marginRight: 8,
+        textStyle: {
+          color: '#FF0',
+          fontSize: 25,
+          fontWeight: ''
+        }
+      },
+      numbers: {
+        letterSpacing: 2,
+        textStyle: {
+          color: '#FF0',
+          fontSize: 22,
+          fontWeight: ''
+        },
+        decimal: 3,
+        thousands: true
+      },
+      suffix: {
+        content: '',
+        marginLeft: 8,
+        textStyle: {
+          color: '#FF0',
+          fontSize: 25,
+          fontWeight: ''
+        }
+      }
+    },
+    data: {
+      default: 123456
+    }
+  },
+  {
+    type: 'textIndi',
+    attr: { x: 650, y: 10, w: 400, h: 40 },
+    config: {
+      global: {
+        arrangement: 'top',
+        distance: 0
+      },
+      title: {
+        content: '今日累计话务量：',
+        textStyle: {
+          fontSize: 30,
+          color: '#F00'
+        }
+      },
+      connter: {
+        justifyContent: 'flex-start',
+        prefix: {
+          content: '',
+          textStyle: {
+            color: '#ffffff',
+            fontSize: 25,
+          }
+        },
+        numbers: {
+          textStyle: {
+            color: '#59ebe8',
+            fontSize: 28,
+            fontWeight: 'normal'
+          },
+          marginRight: 0,
+          backgroundColor: 'rgba(51, 51, 51, 0)',
+          digit: 0,
+          rounding: true,
+          decimal: 2,
+          separatingChart: true
+        },
+        suffix: {
+          content: '',
+          textStyle: {
+            color: '#ffffff',
+            fontSize: 30,
+            fontWeight: 'normal'
+          }
+        }
+      }
+    }
+  }
+  ]
+}
 
 export default app1Cfg

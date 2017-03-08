@@ -302,10 +302,10 @@
       indiId: String
     },
     mounted() {
-      let self = this
-      self.$http.get(`/api/demo/indicator/${this.indiId}`).then(function(response) {
-        console.log(response.data.data)
-      })
+      // let self = this
+      // self.$http.get(`/api/demo/indicator/${this.indiId}`).then(function(response) {
+      //   console.log(response.data.data)
+      // })
     },
     data() {
       return {
