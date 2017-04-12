@@ -44,35 +44,51 @@ let app1Cfg = {
     }
   },
   {
-    type: 'counter',
-    attr: { x: 310, y: 290, w: 200, h: 50 },
+    type: 'text-indi',
+    attr: { x: 650, y: 10, w: 400, h: 60, zIndex:10},
     config: {
-      prefix: {
-        content: '$',
-        marginRight: 8,
+      global: {
+        arrangement: 0, // 0 左右分布 1:上下分布
+        counterHeight: 40,
+        distance: 5
+      },
+      title: {
+        content: '累计花费',
         textStyle: {
           color: '#FF0',
           fontSize: 25,
           fontWeight: ''
         }
       },
-      numbers: {
-        letterSpacing: 2,
-        textStyle: {
-          color: '#FF0',
-          fontSize: 22,
-          fontWeight: ''
+      counter: {
+        justifyContent: 'flex-start',
+        prefix: {
+          content: '￥',
+          marginRight: 8,
+          textStyle: {
+            color: '#FF0',
+            fontSize: 25,
+            fontWeight: ''
+          }
         },
-        decimal: 3,
-        thousands: true
-      },
-      suffix: {
-        content: '',
-        marginLeft: 8,
-        textStyle: {
-          color: '#FF0',
-          fontSize: 25,
-          fontWeight: ''
+        numbers: {
+          letterSpacing: 2,
+          textStyle: {
+            color: '#FF0',
+            fontSize: 22,
+            fontWeight: ''
+          },
+          decimal: 2,
+          thousands: true
+        },
+        suffix: {
+          content: '',
+          marginLeft: 8,
+          textStyle: {
+            color: '#FF0',
+            fontSize: 25,
+            fontWeight: ''
+          }
         }
       }
     },
@@ -81,54 +97,25 @@ let app1Cfg = {
     }
   },
   {
-    type: 'textIndi',
-    attr: { x: 650, y: 10, w: 400, h: 40 },
+    type: 'textArea',
+    attr: { x: 630, y: 120, w: 550, h: 150 },
     config: {
-      global: {
-        arrangement: 'top',
-        distance: 0
+      textStyle: {
+        color: '#FF0',
+        fontWeight: 'bold',
+        textAlign: 'center',
+        textIndent: 40
       },
-      title: {
-        content: '今日累计话务量：',
-        textStyle: {
-          fontSize: 30,
-          color: '#F00'
-        }
-      },
-      connter: {
-        justifyContent: 'flex-start',
-        prefix: {
-          content: '',
-          textStyle: {
-            color: '#ffffff',
-            fontSize: 25,
-          }
-        },
-        numbers: {
-          textStyle: {
-            color: '#59ebe8',
-            fontSize: 28,
-            fontWeight: 'normal'
-          },
-          marginRight: 0,
-          backgroundColor: 'rgba(51, 51, 51, 0)',
-          digit: 0,
-          rounding: true,
-          decimal: 2,
-          separatingChart: true
-        },
-        suffix: {
-          content: '',
-          textStyle: {
-            color: '#ffffff',
-            fontSize: 30,
-            fontWeight: 'normal'
-          }
-        }
+      effect: {
+        enable: true,
+        type: 1,
+        interval: 10
       }
+    },
+    data: {
+      default: '韩联社3月7日报道称，韩国外交部发言人赵俊赫7日指出，朝鲜射导后一天内就有中美日俄等18国和联合国等4个国际组织史无前例地表态予以谴责，韩国将与国际社会一起不断加大全方位施压制裁力度。赵俊赫称，朝鲜视安理会决议和不扩散公约如无物，在核武装的不归路上狂奔不止，毫无弃核念头已经昭然若揭，韩国将与国际社会一道不断加大全方位施压制裁力度。赵俊赫还详举马来西亚和德国警告谴责朝鲜之例，奉劝朝方尽早觉悟到国际社会不会对其反复惹事坐视不理。特朗普政府的朝鲜政策尚未成形，韩方将设法使其具体有效地体现遏制朝方继续挑衅及外交施压的方略。包括韩美首脑通话在内的高层全面战略沟通将于3、4月密集展开。'
     }
-  }
-  ]
+  }]
 }
 
 export default app1Cfg

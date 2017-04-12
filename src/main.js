@@ -8,21 +8,22 @@ import ECharts from 'vue2-echarts/src/ECharts/ECharts.vue'
 /* eslint-disable no-unused-vars */
 import chinaData from '../static/mapdata/china.js'
 /* eslint-disable no-unused-vars */
-import DateUtil from './lib/DateUtil.js'
+import DateUtil from './utils/DateUtil.js'
 import EChartLine from './components/chart/EChartLine.vue'
 import EChartBar from './components/chart/EChartBar.vue'
 import EChartGuage from './components/chart/EChartGuage.vue'
 import EChartMap from './components/chart/EChartMap.vue'
 import EChartPolar from './components/chart/EChartPolar.vue'
 import TextBase from './components/text/TextBase.vue'
-import axios from 'ips-axios'
+// import axios from 'ips-axios'
 import TimeText from './components/text/TimeText.vue'
 import TextIndi from './components/text/TextIndi.vue'
 import Counter from './components/text/Counter.vue'
+import TextArea from './components/text/TextArea.vue'
 
 // register the component to use
 Vue.component('layout', Layout)
-Vue.component('ips-view', ViewContainer)
+Vue.component('ViewContainer', ViewContainer)
 Vue.component('echart', ECharts)
 Vue.component('echartLine', EChartLine)
 Vue.component('echartBar', EChartBar)
@@ -33,10 +34,11 @@ Vue.component('textBase', TextBase)
 Vue.component('timeText', TimeText)
 Vue.component('textIndi', TextIndi)
 Vue.component('counter', Counter)
+Vue.component('textArea', TextArea)
 
-axios.defaults.headers.common['Authorization'] = 'Basic Ym9jbzpib2NvQDIwMTY='
-axios.defaults.headers.common['X-Api-Version'] = 'v1'
-Vue.prototype.$http = axios
+// axios.defaults.headers.common['Authorization'] = 'Basic Ym9jbzpib2NvQDIwMTY='
+// axios.defaults.headers.common['X-Api-Version'] = 'v1'
+// Vue.prototype.$http = axios
 
 /* eslint-disable no-new */
 new Vue({
